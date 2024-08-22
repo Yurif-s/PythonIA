@@ -1,6 +1,7 @@
 import json 
 import os
 from datetime import datetime
+import sqlite3
 
 import yfinance as yf
 
@@ -24,7 +25,7 @@ yahoo_finance_tool = Tool(
 )
 
 # IMPORTANDO OPENAI LLM - GPT
-os.environ['OPENAI_API_KEY'] = st.secrets['OPEN_API_KEY']
+os.environ['OPENAI_API_KEY'] = st.secrets['OPEN_API_KEY'] # Variável de ambiente(Configure no Streamlit Deploy)
 llm = ChatOpenAI(model="gpt-3.5-turbo")
 
 
